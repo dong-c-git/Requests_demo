@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group>
+        <maxid username="pytest" password="123456" >
+            this is maxid test
+            <caption>Python</caption>
+        </maxid>
+    </group>
+</catalog>
