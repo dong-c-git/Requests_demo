@@ -86,4 +86,10 @@ class Client:
 
 
 if __name__ == "__main__":
-    Client.main()
+    import os
+    print(os.path.dirname(__file__))
+    print(os.path.join(os.path.dirname(__file__),"store_id"))
+    aim_path = os.path.join(os.path.dirname(__file__),"store_id")
+    print(os.path.exists(aim_path))
+    os.mkdir(aim_path)
+    print(os.path.exists(aim_path))
