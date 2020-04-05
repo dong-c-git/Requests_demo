@@ -68,7 +68,7 @@ async def token_main():
         '''() =>{ Object.defineProperties(navigator,{ webdriver:{ get: () => false } }) }''')
     #登录的用户名和密码
     await page.type('#BX_Layer2 > div > form > div > div > div > input', 'SKtest', {'delay': input_time_random() - 50})
-    await page.type('.BX_Sprite2 .el-form .el-form-item:nth-child(2) .el-form-item__content .el-input__inner', 'SKtest123', {'delay': input_time_random()})
+    await page.type('.BX_Sprite2 .el-form .el-form-item:nth-child(2) .el-form-item__content .el-input__inner', 'login', {'delay': input_time_random()})
     # 登录时的验证
     normal_login = await page.xpath('//*[@id="BX_Layer2"]/div/form/div[4]/button')
     await normal_login[0].click()
@@ -383,7 +383,7 @@ async def main():
         '''() =>{ Object.defineProperties(navigator,{ webdriver:{ get: () => false } }) }''')
     #登录的用户名和密码
     await page.type('#BX_Layer2 > div > form > div > div > div > input', 'SKtest', {'delay': input_time_random() - 50})
-    await page.type('.BX_Sprite2 .el-form .el-form-item:nth-child(2) .el-form-item__content .el-input__inner', 'SKtest123', {'delay': input_time_random()})
+    await page.type('.BX_Sprite2 .el-form .el-form-item:nth-child(2) .el-form-item__content .el-input__inner', 'login', {'delay': input_time_random()})
     # 登录时的验证
     normal_login = await page.xpath('//*[@id="BX_Layer2"]/div/form/div[4]/button')
     await normal_login[0].click()
