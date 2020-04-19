@@ -1,0 +1,17 @@
+-   config:
+        name: test login api demo
+        variables: {}
+        request:
+            base_url: http://49.235.92.12:9000
+-   test:
+        name: 测试用例/api/test/demo
+        request:
+            method: GET
+            url: /api/test/demo
+
+        validate:
+            - eq: [status_code, 200]
+            - eq: [content.code, 0]
+            - eq: [content.msg, success!]
+
+

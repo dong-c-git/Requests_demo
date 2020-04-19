@@ -1,0 +1,21 @@
+-   config:
+        name: logincase
+        variables: {}
+-   test:
+        name: login case1
+        request:
+              url: http://www.baidu.com
+              method: GET
+              headers:
+                  Content-Type: application/json
+                  User-Agent: python-requests/2.18.4
+              json:
+                  username: test
+                  password: 123456
+        extract:
+            - cookie: content.token
+        validate:
+            - eq: [status_code,200]
+            - eq: [headers.Content-Type, application.json]
+            - eq: [content.msg, login sucess!]
+            - eq: [content.code, 0]

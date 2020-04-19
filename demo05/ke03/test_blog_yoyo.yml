@@ -1,0 +1,17 @@
+- config:
+    name: test demo
+
+- test:
+    name: test demo case1
+    request:
+        url: https://www.cnblogs.com/yoyoketang/
+        method: GET
+        headers:
+            User-Agent: Fiddler
+            Content-Type: application/json
+        verify: false
+    extract:
+        - title: '<title>(.+?)</title>'
+    validate:
+        - eq: [status_code, 200]
+        - eq: ['<title>(.+?)</title>', 上海-悠悠 - 博客园]

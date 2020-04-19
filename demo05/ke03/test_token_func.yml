@@ -1,0 +1,22 @@
+-    config:
+         name: test login api demo
+         variables:
+             token: ${get_token()}
+         request:
+             base_url: $host
+
+-    test:
+         name: 获取个人信息-使用登录token
+         request:
+             headers:
+                 Authorization: Token $token
+             method: GET
+             url: /info
+         validate:
+         -    eq:
+              - status_code
+              - 200
+         -    eq:
+              - content.code
+              - 0
+         -    eq: [content.msg, sucess!]

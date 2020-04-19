@@ -1,0 +1,29 @@
+-    config:
+        name: test_get_demo
+        variables: {}
+        request:
+            base_url: http://49.235.92.12:9000
+
+-    test:
+        name: 测试用例名称
+        request:
+            headers:
+                Content-Type: application/json
+            json:
+                password: '123456'
+                username: test
+            method: POST
+            url: /api/v1/login
+        extract:
+            - msg: content.msg
+        validate:
+        -   eq:
+            - status_code
+            - 200
+        -   eq:
+            - content.code
+            - 0
+        -   eq:
+            - content.msg
+            - login success!
+
